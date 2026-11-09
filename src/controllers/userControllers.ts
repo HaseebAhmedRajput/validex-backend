@@ -18,6 +18,10 @@ const registerUser = AsyncHandler(async (req: Request, res: Response) => {
   const validatedData = signUpSchema.parse(req.body); //zod parsing so the name will be uppercase
   const { fullname, email, password, department, role, number, batch, regNo } =
     validatedData;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc3d8b8 (removed uneccesary comments)
 const existedUser = await User.findOne({
   $or: [{ email }, { regNo }]
 }).lean();

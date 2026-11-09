@@ -212,7 +212,7 @@ const refreshAccessToken = AsyncHandler(
         "something went wrong when refreshing acces token please login again",
       );
     }
-    console.log('refreshtoken api is used');
+    // console.log('refreshtoken api is used');
 
     if (redisUser.refreshToken !== incomingToken) {
       throw new ApiError(404, "invalid refresh token");
