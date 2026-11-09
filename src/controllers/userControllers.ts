@@ -18,9 +18,10 @@ const registerUser = AsyncHandler(async (req: Request, res: Response) => {
   const validatedData = signUpSchema.parse(req.body); //zod parsing so the name will be uppercase
   const { fullname, email, password, department, role, number, batch, regNo } =
     validatedData;
-
-  const existedUser = await User.findOne({ email }).lean();
-  if (existedUser) throw new ApiError(400, "User Already Exist");
+const existedUser = await User.findOne({
+  $or: [{ email }, { regNo }]
+}).lean();
+  if (existedUser) throw new ApiError(400, "User with this email or reg num Already Exist");
 
   const otp = crypto.randomInt(10000, 99999);
   const redisKey = `tempUser:${email}`;
