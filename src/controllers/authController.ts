@@ -212,8 +212,7 @@ const refreshAccessToken = AsyncHandler(
         "something went wrong when refreshing acces token please login again",
       );
     }
-    console.log('refreshtoken api is used');
-
+    // console.log('refreshtoken api is used');
     if (redisUser.refreshToken !== incomingToken) {
       throw new ApiError(404, "invalid refresh token");
     }
@@ -270,7 +269,7 @@ const desktopLogin = AsyncHandler(
       throw new ApiError(400, "email and password must required");
     }
 
-    console.log("desktop runnning");
+    // console.log("desktop runnning");
     
 
     let key = `desktopSession:${email}`;
