@@ -270,7 +270,7 @@ const desktopLogin = AsyncHandler(
       throw new ApiError(400, "email and password must required");
     }
 
-    console.log("desktop runnning");
+    // console.log("desktop runnning");
     
 
     let key = `desktopSession:${email}`;

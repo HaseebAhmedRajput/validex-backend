@@ -104,7 +104,7 @@ else if (violation >3) {
     
         (async()=>{
             try {
-          console.log("Sending data to Gemini API...");
+          // console.log("Sending data to Gemini API...");
           let rawResponse = await getMarks(questionWithAns);
           let obtainedMarks= mcqsObtainedMarks
           
@@ -132,7 +132,7 @@ else if (violation >3) {
             submittedTest.theoreticalAns = gradedQuestions;
             submittedTest.obtainedMarks = obtainedMarks<0?0:obtainedMarks; 
             await submittedTest.save();
-            console.log(" Gemini Evaluation Completed and Saved!");
+            // console.log(" Gemini Evaluation Completed and Saved!");
           }
           
         } catch (error: any) {

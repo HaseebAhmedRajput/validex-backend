@@ -54,7 +54,7 @@ const attemptScehma = new Schema<IAttempt>(
       {
         questionId: {
           type: Schema.Types.ObjectId,
-          ref: "Test",
+          ref: "Question",
         },
         ans: {
           type: String,

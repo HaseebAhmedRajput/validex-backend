@@ -346,7 +346,8 @@ if (
   if (!attempt) {
     throw new ApiError(404, "No attempt found for this student");
   }
-
+  console.log(attempt);
+  
 
  
   res.status(200).json(
@@ -380,10 +381,6 @@ const seeTotalAttendees = AsyncHandler(
   },
 );
 
-// see all created test  ✔️
-// see specific test details✔️
-// see all student who attempt the test ✔️
-// see specific student attempted test
 
 export {
   createTest,
