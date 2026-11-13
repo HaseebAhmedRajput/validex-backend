@@ -346,7 +346,7 @@ if (
   if (!attempt) {
     throw new ApiError(404, "No attempt found for this student");
   }
-  console.log(attempt);
+  
   
 
  
