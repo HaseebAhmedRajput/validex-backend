@@ -128,23 +128,28 @@ await LiveTimer.findOneAndUpdate(
 
 // Shuffle Questions & MCQ Options
 
-if (Array.isArray(test.questions) && test.questions.length > 0) {
-  const shuffledQuestions = shuffleArray(test.questions);
+// if (Array.isArray(test.questions) && test.questions.length > 0) {
+//   const shuffledQuestions = shuffleArray(test.questions);
 
-  test.questions = shuffledQuestions.map((question: any) => {
-    if (
-      question.questionType !== "mcq" ||
-      !Array.isArray(question.options)
-    ) {
-      return question;
+//   test.questions = shuffledQuestions.map((question: any) => {
+//     if (
+//       question.questionType !== "mcq" ||
+//       !Array.isArray(question.options)
+//     ) {
+//       return question;
+//     }
+
+//     return {
+//       ...question,
+//       options: shuffleArray(question.options),
+//     };
+//   });
+// }
+
+
+    if (Array.isArray(test.questions) && test.questions.length > 0) {
+      test.questions = shuffleArray(test.questions);
     }
-
-    return {
-      ...question,
-      options: shuffleArray(question.options),
-    };
-  });
-}
     res
       .status(200)
       .json(new ApiResponse(200, test, "okay, you can join the test"));
